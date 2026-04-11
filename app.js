@@ -35,9 +35,16 @@ app.use("/refnilai", refnilaiRoutes);
 app.use("/nilaiidk", nilaiidkRoutes);
 app.use("/simpan", simpanRoutes);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () =>
     console.log(`Server berjalan di http://localhost:${PORT}`)
 );
+
+
+//const PORT = 3000;
+//app.listen(PORT, () =>
+//    console.log(`Server berjalan di http://localhost:${PORT}`)
+//);
 
 
