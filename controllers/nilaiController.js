@@ -2,24 +2,12 @@
 
 const db = require("../db");
 
-// ambil data untu lISTING
 
-
-
+// ambil data untu lISTING Kanan
 exports.loadDataByPeriode = async (req, res) => {
 
     const periode = req.params.periode;
     const [tahun, bulan] = periode.split("-");
-    
-
-    //const startDate = `#${tahun}-${bulan}-01#`;
-    //const endDate   = `#${tahun}-${String(Number(bulan)+1).padStart(2,'0')}-01#`;
-    //    const sql = `
-    //    SELECT PERIOD, IDK, NAMA, TOTALPERSEN, BNSACTUAL
-    //    FROM TABEL_NILAI
-    //    WHERE PERIOD >= ${startDate} AND PERIOD < ${endDate}
-    //`;
-
     const sql = `
     SELECT period, idk, nama, totalpersen, bnsactual
     FROM tabel_nilai
@@ -44,6 +32,7 @@ exports.loadDataByPeriode = async (req, res) => {
     }
 };
 
+//ambil data untuk panel kiri
 exports.loadDataByPeriodeidk = async (req, res) => {
     const periode = req.params.periode;
     const [tahun, bulan] = periode.split("-");
@@ -77,135 +66,88 @@ exports.loadDataByPeriodeidk = async (req, res) => {
 
 };
 
+//===============================
+//simpan Nilai (update)
+//===============================
 
+const updateByKeys = async (table, data, where, db) => {
+  // ambil field dari data
+  const fields = Object.keys(data); //ambil nama fieldnya aja
 
+    // bikin SET clause
+  const setClause = fields
+    .map((f, i) => `${f}=$${i + 1}`)
+    .join(", ");
 
-// Ambil daftar nilai berdasarkan periode
-//exports.getByPeriode = async (req, res) => {
-//    try {
-//        const { periode } = req.params;
-//
-//        const sql = `
-//            SELECT *
-//            FROM TABEL_NILAI
-//            WHERE PERIOD = '${periode}'
-//            ORDER BY IDK
-//        `;
+  // bikin WHERE clause
+  const whereKeys = Object.keys(where);
+  const whereClause = whereKeys
+    .map((f, i) => `${f}=$${fields.length + i + 1}`)
+    .join(" AND ");
 
-//        const rows = await db.query(sql);
-//        res.json(rows);
+  // gabung jadi SQL
+  const sql = `
+    UPDATE ${table}
+    SET ${setClause}
+    WHERE ${whereClause}
+  `;
 
-//    } catch (err) {
-//        res.status(500).json({ error: err.message });
-//    }
-//};
+  // values untuk SET
+  const values = fields.map(f => data[f] ?? null);
+
+  // values untuk WHERE
+  const whereValues = whereKeys.map(f => where[f]);
+
+  const finalValues = [...values, ...whereValues];
+
+  // debug (optional)
+  //console.log(sql);
+  //console.log(finalValues.length, "params");
+
+  return db.query(sql, finalValues);
+};
 
 
 exports.simpanNilai = async (req, res) => {
-    try {
-        const d = req.body;
+  try {
+    const d = req.body;
 
-        //tanggal yang diambil itu formatnya YYYY-MM, jadi harus diubah dulu jadi penanggalan system
-        const chdate = d.PERIOD;
-        const [xyear, xmonth]= chdate.split("-");
-        //const xperiode = `#${xyear}-${xmonth}-01#`;
-        const xperiode = `${xyear}-${xmonth}-01`;
+    const [xyear, xmonth] = d.period.split("-");
+    const xperiode = `${xyear}-${String(xmonth).padStart(2, '0')}-01`;
 
-        if (!d.PERIOD || !d.IDK) {
-            return res.json({ success: false, msg: "PERIOD & IDK wajib ada!" });
-        }
-
-        // Escape khusus Access
-        const esc = (v) => v === undefined || v === null ? '' : String(v).replace(/'/g, "''");
-
-        let sql = `
-            UPDATE tabel_nilai SET
-                period=${esc(xperiode)},
-                idk='${esc(d.IDK)}',
-
-                nama='${esc(d.nama)}',
-                jabatan='${esc(d.jabatan)}',
-                nilaibonus=${d.nilaibonus},
-
-                cutisakit=${d.cutisakit},
-                telatu30=${d.telatu30},
-                telatd30=${d.telatd30},
-                telatu60=${d.telatu60},
-                lupa=${d.lupa},
-                hadirfull=${d.hadirfull},
-                ontime=${d.ontime},
-                ovrmnt=${d.ovrmnt},
-                kerjalibur=${d.kerjalibur},
-                reward=${d.reward},
-                lalai=${d.lalai},
-                tunda=${d.tunda},
-                alpha=${d.alpha},
-
-                cutisakita=${d.cutisakita},
-                telatu30a=${d.telatu30a},
-                telatd30a=${d.telatd30a},
-                telatu60a=${d.telatu60a},
-                lupaa=${d.lupaa},
-                hadirfulla=${d.hadirfulla},
-                ontimea=${d.ontimea},
-                ovrmnta=${d.ovrmnta},
-                kerjalibura=${d.kerjalibura},
-                reward=${d.rewarda},
-                lalaia=${d.lalaia},
-                tundaa=${d.tundaa},
-                alphaa=${d.alphaa},
-
-                cutisakitb=${d.cutisakitb},
-                telatu30b=${d.telatu30b},
-                telatd30b=${d.telatd30b},
-                telatu60b=${d.telatu60b},
-                lupab=${d.lupab},
-                hadirfullb=${d.hadirfullb},
-                ontimeb=${d.ontimeb},
-                ovrmntb=${d.ovrmntb},
-                kerjaliburb=${d.kerjaliburb},
-                rewardb=${d.rewardb},
-                lalaib=${d.lalaib},
-                tundab=${d.tundab},
-                alphab=${d.alphab},
-
-                totals=${d.TOTALS},
-                totalr=${d.TOTALR},
-                totalp=${d.TOTALP},
-
-                totalnilai=${d.totalnilai},
-                totalpersen=${d.totalpersen},
-                surplusmin=${d.surplusmin},
-                jmlbonus=${d.jmlbonus},
-                bnsactual=${d.bnsactual}
-
-                WHERE period=$1
-                AND idk=$2
-        `;
-
-        const rows = await db.query(sql, [xperiode, d.IDK]);
-
-        //db.query(sql, (err, result) => {
-        //    if (err) {
-        //        console.log("SQL ERROR:", sql);
-        //        console.error(err);
-        //        return res.json({ success: false, msg: "Gagal update database!" });
-        //    }
-
-            res.json({ success: true, msg: "Update berhasil!" });
-        //});
-
-    } catch (e) {
-        console.error(e);
-        res.json({ success: false, msg: "Server error!" });
+    if (!d.period || !d.idk) {
+      return res.json({ success: false, msg: "PERIOD & IDK wajib ada!" });
     }
+
+    // ❗ penting: jangan ikutkan field WHERE ke data update
+   
+    const dataUpdate = { ...d };
+    delete dataUpdate.period;
+    delete dataUpdate.idk;
+
+    await updateByKeys(
+      "tabel_nilai",
+      dataUpdate,
+      { period: xperiode, idk: d.idk },
+      db
+    );
+
+    res.json({ success: true, msg: "Update berhasil!" });
+
+  } catch (e) {
+    console.error(e);
+    res.json({ success: false, msg: "Server error!" });
+  }
 };
+
+//=====================================================================
+
+
+
 
 exports.deleteNilai = async (req, res) => {
     try {
         const items = req.body.items;
-        //console.log("REQ BODY:", req.body);
-        //tanggal yang diambil itu formatnya YYYY-MM, jadi harus diubah dulu jadi penanggalan system
  
         if (!items || items.length === 0) {
             return res.json({ success: false, msg: "Tidak ada data!" });
@@ -216,7 +158,7 @@ exports.deleteNilai = async (req, res) => {
 
         for (let row of items) {
 
-          const zdate = row.PERIOD;
+          const zdate = row.period;
           const [zyear, zmonth]= zdate.split("-");
           const zperiode = `${zyear}-${String(zmonth).padStart(2, '0')}-01`;
 
@@ -225,12 +167,9 @@ exports.deleteNilai = async (req, res) => {
                 DELETE FROM tabel_nilai
                 WHERE idk=$1 AND period=$2
             `;
-            //console.log("EKSEKUSI QUERY:", sql);
-
 
             try {
-                await db.query(sql, [row.IDK, zperiode]);
-                //await db.query(sql);  // <— TANPA CALLBACK
+                await db.query(sql, [row.idk, zperiode]);
                 successCount++;
             } catch (err) {
                 console.log("Delete error:", err);
@@ -249,4 +188,121 @@ exports.deleteNilai = async (req, res) => {
         console.error(err);
         res.json({ success: false, msg: "Server error!" });
     }
+};
+
+
+//const pool = require('../db');
+
+exports.tambahNilai = async (req, res) => {
+  const period = req.body.period;
+
+  if (!period) {
+    return res.status(400).json({
+      message: 'Period wajib diisi'
+    });
+  }
+    const parts = period.split("-");
+
+    if (parts.length !== 2) {
+        return res.status(400).json({
+        message: 'Format period harus YYYY-MM'
+    });
+    }
+
+  const [zyear, zmonth]= period.split("-");
+  const zperiode = `${zyear}-${String(zmonth).padStart(2, '0')}-01`;
+
+  let client;
+  //const client = await db.connect();
+
+  try {
+    client = await db.pool.connect();
+
+    await client.query('BEGIN');
+
+    // ✅ 1. Cek apakah period sudah ada
+    const cek = await client.query(
+      `SELECT 1 FROM tabel_nilai WHERE period = $1 LIMIT 1`,
+      [zperiode]
+    );
+
+    if (cek.rowCount > 0) {
+      await client.query('ROLLBACK');
+      return res.status(400).json({
+        message: 'Period sudah ada, insert dibatalkan'
+      });
+    }
+
+    // ✅ 2. Ambil parameter dari tabelref_nilai
+    const refResult = await client.query(
+      `SELECT * FROM tabelref_nilai LIMIT 1`
+    );
+
+    if (refResult.rowCount === 0) {
+      throw new Error('Data referensi kosong');
+    }
+
+    const ref = refResult.rows[0];
+
+    // ✅ 3. Insert dari tabel_karyawan
+    await client.query(`
+      INSERT INTO tabel_nilai (
+        period, idk, nama, jabatan,
+        nilaibonus,
+        cutisakita,
+        telatu30a,
+        telatd30a,
+        telatu60a,
+        lupaa,
+        hadirfulla,
+        ontimea,
+        ovrmnta,
+        kerjalibura,
+        rewarda,
+        lalaia,
+        tundaa,
+        alphaa
+      )
+      SELECT 
+        $1,
+        k.idk,
+        k.nama,
+        k.jabatan,
+        $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15
+      FROM tabel_karyawan k
+    `, [
+      zperiode,
+      ref.nilaibonus,
+      ref.cutisakita,
+      ref.telatu30a,
+      ref.telatd30a,
+      ref.telatu60a,
+      ref.lupaa,
+      ref.hadirfulla,
+      ref.ontimea,
+      ref.ovrmnta,
+      ref.kerjalibura,
+      ref.rewarda,
+      ref.lalaia,
+      ref.tundaa,
+      ref.alphaa
+    ]);
+
+    await client.query('COMMIT');
+
+    res.json({
+      message: 'Data berhasil ditambahkan'
+    });
+
+  } catch (err) {
+    if (client) await client.query('ROLLBACK');
+    console.error(err);
+
+    res.status(500).json({
+      message: 'Terjadi error',
+      error: err.message
+    });
+  } finally {
+    if (client) client.release();
+  }
 };

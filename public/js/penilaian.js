@@ -61,22 +61,6 @@ document.getElementById("btnLoad").addEventListener("click", async () => {
 })
 
 
-// SELECT ALL (CHECKBOXES)
-//document.getElementById("chkHeader").addEventListener("change", function () {
-//    let status = this.checked;
-//    document.querySelectorAll(".chkRow").forEach(c => c.checked = status);
-//});
-
-//NUNGGU CLICK CHECKBOXES
-//document.addEventListener("change", function (e) {
-//   console.log("Checkbox changed:", e.target);
-
-//    if (e.target.classList.contains("chkRow")) {
-//        let all = document.querySelectorAll(".chkRow");
-//        let checked = document.querySelectorAll(".chkRow:checked");
-//        document.getElementById("chkHeader").checked = (all.length === checked.length);
-//    }
-//});
 
 function rebindCheckboxEvents() {
     const chkAll = document.getElementById("chkHeader");
@@ -95,24 +79,6 @@ function rebindCheckboxEvents() {
             chkAll.checked = allChecked;
         };
     });
-
-
-
-    // Event header (centang semua)
-    //chkAll.addEventListener("change", () => {
-    //    chkRows.forEach(chk => {
-    //        chk.checked = chkAll.checked;
-    //    });
-    //});
-
-    // Event setiap baris
-    //chkRows.forEach(chk => {
-    //    chk.addEventListener("change", () => {
-    //       // Update status header checkbox
-    //        const allChecked = [...chkRows].every(c => c.checked);
-    //        chkAll.checked = allChecked;
-    //    });
-    //});
 }
 
 
@@ -152,87 +118,7 @@ document.getElementById("btnDelete").addEventListener("click", async () => {
 
 
 
-// ========== 3. "+ TAMBAH DATA" ==========
-function tambahData() {
-    mode = "add";
-    selectedIDK = "";
-
-    document.querySelectorAll("input[type=text]").forEach(t => t.value = "");
-    document.querySelectorAll("label[data-clear]").forEach(l => l.innerText = "-");
-
-    document.getElementById("btnAdd").disabled = true;
-}
-
 // ========== 4. KLIK ROW LISTING ==========
-
-/*
-async function selectRow(IDK, PERIOD) {
-    mode = "edit";
-    selectedIDK = IDK;
-    
-    // Konversi PERIOD ke YYYY-MM
-    const periode = document.getElementById("periode").value;
-    const res = await fetch(`/nilaiidk/load/${periode}`);
-    const result = await res.json();
-    const row = result.data.find(r => r.IDK === IDK);
-     
-    if (!row) {
-        alert("Data tidak ditemukan!");
-        return;
-    }
-
-    // Ambil data karyawan
-    const resK = await fetch(`/karyawan/${IDK}`);
-    const karyawan = await resK.json();
-
-   
-    // ========== ISI FORM ==========
-    document.getElementById("idk").value = row.IDK;
-    document.getElementById("nama").value = row.NAMA;
-    document.getElementById("jabatan").innerText = karyawan.JABATAN;
-    document.getElementById("bonus").value = row.NILAIBONUS || 0;
-
-    // TX1–TX13
-    document.getElementById("tx1").value = row.CUTISAKIT;
-    document.getElementById("tx2").value = row.TELATU30;
-    document.getElementById("tx3").value = row.TELATD30;
-    document.getElementById("tx4").value = row.TELATU60;
-    document.getElementById("tx5").value = row.LUPA;
-    document.getElementById("tx6").value = row.HADIRFULL;
-    document.getElementById("tx7").value = row.ONTIME;
-    document.getElementById("tx8").value = row.OVRMNT;
-    document.getElementById("tx9").value = row.KERJALIBUR;
-    document.getElementById("tx10").value = row.REWARD;
-    document.getElementById("tx11").value = row.LALAI;
-    document.getElementById("tx12").value = row.TUNDA;
-    document.getElementById("tx13").value = row.ALPHA;
-
-    // REF nilai
-    //for (let i = 1; i <= 13; i++) {
-    //    document.getElementById(`ref${i}`).innerText = refData[`REF${i}`];
-    //}
-    await loadReferensi();
-    document.getElementById("ref1").innerText = refData.CUTISAKIT;
-    document.getElementById("ref2").innerText = refData.TELATU30A;
-    document.getElementById("ref3").innerText = refData.TELATD30A;
-    document.getElementById("ref4").innerText = refData.TELATU60A;
-    document.getElementById("ref5").innerText = refData.LUPAA;
-    document.getElementById("ref6").innerText = refData.HADIRFULLA;
-    document.getElementById("ref7").innerText = refData.ONTIMEA;
-    document.getElementById("ref8").innerText = refData.OVRMNTA;
-    document.getElementById("ref9").innerText = refData.KERJALIBURA;
-    document.getElementById("ref10").innerText = refData.REWARDA;
-    document.getElementById("ref11").innerText = refData.LALAIA;
-    document.getElementById("ref12").innerText = refData.TUNDAA;
-    document.getElementById("ref13").innerText = refData.ALPHAA;
-
-    // Hitung hasil otomatis
-    hitungHasil();
-
-    console.log(`Row ${IDK} berhasil dimuat ke form`);
-}
-*/
-
 async function selectRow(IDK, PERIOD) {
     mode = "edit";
     selectedIDK = IDK;
@@ -360,7 +246,7 @@ document.getElementById("btnSimpan").addEventListener("click", async () => {
 });
 
 
-// ========== 6. SIMPAN DATA (INSERT atau UPDATE) ==========
+// ========== 6. SIMPAN DATA (UPDATE) ==========
 async function simpanData() {
     console.log("MULAI UPDATE DATA");
     const periode = document.getElementById("periode").value;
@@ -459,3 +345,42 @@ async function simpanData() {
         alert("Gagal menyimpan data!");
     }
 }
+
+//buat kalau tombol generate data diclick
+async function generatedata() {
+  try {
+    const period = document.getElementById('periode').value;
+    console.log("MULAI GENERATEDATA",period);
+    if (!period) {
+      alert("Period wajib diisi");
+      return;
+    }
+
+    const res = await fetch('/nilai/tambah', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ period })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.message || "Gagal");
+    }
+
+    await loadData(); // reload table
+    alert(data.message);
+
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+    //alert("NGACO!!");
+  }
+}
+
+
+document.getElementById("btnTambah").addEventListener("click", async () => {
+    await generatedata();
+});
