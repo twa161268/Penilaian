@@ -13,22 +13,23 @@ async function loadReferensi() {
 async function loadData() {  
     return new Promise(async (resolve) => {
     const periode = document.getElementById("periode").value;
-    console.log("LOAD DATA UNTUK PERIODE:", periode);
+   
     if (!periode) {
         alert("Silakan pilih periode!");
         return resolve();
     }
-
+    //console.log("MULAI LOAD DATA UNTUK PERIODE:", periode);
     const res = await fetch(`/nilai/load/${periode}`);
     const data = await res.json();
-    
+
+    //console.log("Data yang diterima:",data.loadData); // <-- pastikan struktur data benar
 
     const tbody = document.querySelector("#tblPenilaian tbody");
     tbody.innerHTML = "";
 
     if (data.success && data.data.length > 0) {
         data.data.forEach(row => {
-            console.log("Loading row:", row);    
+            //console.log(`Loading row: ${row.idk}, ${row.period}, Period: ${String(row.period).substring(0, 7)}`);
             tbody.innerHTML += `
             <tr onclick="selectRow('${row.idk}', '${row.period}')">
             <td>${String(row.period).substring(0, 7)}</td>
@@ -94,10 +95,12 @@ document.getElementById("btnDelete").addEventListener("click", async () => {
     const list = [];
     selected.forEach(c => {
         list.push({
-            IDK: c.dataset.idk,
-            PERIOD: c.dataset.period
+            idk: c.dataset.idk,
+            period: c.dataset.period
         });
     });
+    //console.log("Data yang akan dihapus:", list);
+
 
     const res = await fetch("/nilai/delete", {
         method: "POST",
@@ -154,7 +157,7 @@ async function selectRow(IDK, PERIOD) {
         }
 
 
-        const resk = await fetch(`/karyawan/${IDK}`);
+        const resk = await fetch(`/karyawan/load/${IDK}`);
         const karyawan = await resk.json();
 
         if (!karyawan) {
@@ -186,8 +189,6 @@ async function selectRow(IDK, PERIOD) {
         fields2.forEach((g, i) => {
             document.getElementById(`ref${i+1}`).innerText = refData[g] || 0;
         });
-        
-
 
         hitungHasil();
 
@@ -241,12 +242,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
+
+// ========== 6. SIMPAN DATA (UPDATE) ==========
+
 document.getElementById("btnSimpan").addEventListener("click", async () => {
     await simpanData();
 });
 
 
-// ========== 6. SIMPAN DATA (UPDATE) ==========
 async function simpanData() {
     console.log("MULAI UPDATE DATA");
     const periode = document.getElementById("periode").value;
@@ -383,4 +386,45 @@ async function generatedata() {
 
 document.getElementById("btnTambah").addEventListener("click", async () => {
     await generatedata();
+});
+
+
+document.getElementById("btnCari").addEventListener("click", function () {
+    let keyword = document.getElementById("cari").value.toLowerCase();
+    let table = document.getElementById("tblPenilaian");
+    let rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i];
+        let text = row.innerText.toLowerCase();
+        //let nama = row.cells[2].innerText.toLowerCase(); // kolom NAMA
+
+        if (text.includes(keyword)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    }
+});
+
+document.getElementById("btnRepof").addEventListener("click", function () {
+    const periode = document.getElementById("periode").value;
+    const idk = document.getElementById("idk").value;
+    if (!periode || !idk) {
+        alert("Periode dan ID Karyawan harus diisi!");
+        return;
+    }
+    window.open(`/report/pdf?periode=${periode}&idk=${idk}`, "_blank");
+});
+
+document.getElementById("btnRepof2").addEventListener("click", function () {
+    const periode = document.getElementById("periode").value;
+    //const idk = document.getElementById("idk").value;
+
+    if (!periode) {
+        alert("Periode harus diisi!");
+        return;
+    }
+
+    window.open(`/report/pdf2?periode=${periode}`, "_blank");
 });

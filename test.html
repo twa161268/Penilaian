@@ -1,0 +1,9177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA004</p>
+    <p><b>Nama:</b> SITI KADAR LAELA</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>3</td>
+<td>-5</td>
+<td>-15</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-21</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -26</p>
+<p>TOTAL %: -0.26</p>
+<p>BONUS ACTUAL: 740000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA005</p>
+    <p><b>Nama:</b> HARNI RAHAYU</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td>1</td>
+<td>10</td>
+<td>10</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>20</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 4</p>
+<p>TOTAL %: 0.04</p>
+<p>BONUS ACTUAL: 1040000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA006</p>
+    <p><b>Nama:</b> VIKI AMALIA</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -16</p>
+<p>TOTAL %: -0.16</p>
+<p>BONUS ACTUAL: 840000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA007</p>
+    <p><b>Nama:</b> ISKANDAR</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -11</p>
+<p>TOTAL %: -0.11</p>
+<p>BONUS ACTUAL: 890000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA008</p>
+    <p><b>Nama:</b> HARSONO</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>10</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -1</p>
+<p>TOTAL %: -0.01</p>
+<p>BONUS ACTUAL: 990000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA009</p>
+    <p><b>Nama:</b> NENNY MINTARTI</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td>1</td>
+<td>10</td>
+<td>10</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>25</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 9</p>
+<p>TOTAL %: 0.09</p>
+<p>BONUS ACTUAL: 1090000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA010</p>
+    <p><b>Nama:</b> BAIQ AULIA PURWANTI NIRMALA</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td>1</td>
+<td>20</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 19</p>
+<p>TOTAL %: 0.19</p>
+<p>BONUS ACTUAL: 1190000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA011</p>
+    <p><b>Nama:</b> HUSEN JUSUF BST</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>15</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -16</p>
+<p>TOTAL %: -0.16</p>
+<p>BONUS ACTUAL: 840000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA012</p>
+    <p><b>Nama:</b> GADRI ANDI DARWIS M</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>10</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -1</p>
+<p>TOTAL %: -0.01</p>
+<p>BONUS ACTUAL: 990000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA013</p>
+    <p><b>Nama:</b> ADRIANUS MANHITU</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>10</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -1</p>
+<p>TOTAL %: -0.01</p>
+<p>BONUS ACTUAL: 990000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA014</p>
+    <p><b>Nama:</b> DOMINIKUS SEKA WEA</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-8</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>15</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 2</p>
+<p>TOTAL %: 0.02</p>
+<p>BONUS ACTUAL: 1020000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA015</p>
+    <p><b>Nama:</b> IRMINA TANAOUF</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>10</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -1</p>
+<p>TOTAL %: -0.01</p>
+<p>BONUS ACTUAL: 990000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA016</p>
+    <p><b>Nama:</b> MARGARETHA SALLY HOAR</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td>1</td>
+<td>-10</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-16</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>10</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -11</p>
+<p>TOTAL %: -0.11</p>
+<p>BONUS ACTUAL: 890000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA017</p>
+    <p><b>Nama:</b> DORATHEA HOAR SERAN</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td>1</td>
+<td>20</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>35</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 24</p>
+<p>TOTAL %: 0.24</p>
+<p>BONUS ACTUAL: 1240000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA018</p>
+    <p><b>Nama:</b> ANNA LIDVINA F PAUN</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-16</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -41</p>
+<p>TOTAL %: -0.41</p>
+<p>BONUS ACTUAL: 590000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA019</p>
+    <p><b>Nama:</b> AGUSTINA KOLO</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-16</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>10</td>
+<td>2</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>20</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -21</p>
+<p>TOTAL %: -0.21</p>
+<p>BONUS ACTUAL: 790000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA020</p>
+    <p><b>Nama:</b> ANITA FLORIDA TANIK</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-8</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>10</td>
+<td>2</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td>1</td>
+<td>10</td>
+<td>10</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -3</p>
+<p>TOTAL %: -0.03</p>
+<p>BONUS ACTUAL: 970000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA021</p>
+    <p><b>Nama:</b> FRANSISKUS KEU TODA</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>10</td>
+<td>2</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>20</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -11</p>
+<p>TOTAL %: -0.11</p>
+<p>BONUS ACTUAL: 890000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA022</p>
+    <p><b>Nama:</b> IRMA SULISTIAWATI SE</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>5</td>
+<td>-5</td>
+<td>-25</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-31</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>10</td>
+<td>2</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>20</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -36</p>
+<p>TOTAL %: -0.36</p>
+<p>BONUS ACTUAL: 640000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA023</p>
+    <p><b>Nama:</b> MARNIA</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-6</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -31</p>
+<p>TOTAL %: -0.31</p>
+<p>BONUS ACTUAL: 690000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA024</p>
+    <p><b>Nama:</b> DEZA ZULFAHMI</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td>1</td>
+<td>-10</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-16</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td>1</td>
+<td>20</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>20</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -21</p>
+<p>TOTAL %: -0.21</p>
+<p>BONUS ACTUAL: 790000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA025</p>
+    <p><b>Nama:</b> SAIDA SADA ARIH MATANARI</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -6</p>
+<p>TOTAL %: -0.06</p>
+<p>BONUS ACTUAL: 940000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA026</p>
+    <p><b>Nama:</b> TRI AYU WAHYUNI</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-16</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -11</p>
+<p>TOTAL %: -0.11</p>
+<p>BONUS ACTUAL: 890000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA027</p>
+    <p><b>Nama:</b> ANNA MAGDALENA</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-18</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>35</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -8</p>
+<p>TOTAL %: -0.08</p>
+<p>BONUS ACTUAL: 920000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA028</p>
+    <p><b>Nama:</b> SAPTO PUDJO UTOMO</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-8</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>35</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 2</p>
+<p>TOTAL %: 0.02</p>
+<p>BONUS ACTUAL: 1020000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA029</p>
+    <p><b>Nama:</b> HERIYADI</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-18</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -13</p>
+<p>TOTAL %: -0.13</p>
+<p>BONUS ACTUAL: 870000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA030</p>
+    <p><b>Nama:</b> USUP TRIYADI</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-18</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td>1</td>
+<td>20</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td>1</td>
+<td>10</td>
+<td>10</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>60</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 17</p>
+<p>TOTAL %: 0.17</p>
+<p>BONUS ACTUAL: 1170000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA031</p>
+    <p><b>Nama:</b> HERLINAWATI</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-18</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -13</p>
+<p>TOTAL %: -0.13</p>
+<p>BONUS ACTUAL: 870000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA032</p>
+    <p><b>Nama:</b> MARIA MAGDALENA LOU</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>2</td>
+<td>-5</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-18</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -13</p>
+<p>TOTAL %: -0.13</p>
+<p>BONUS ACTUAL: 870000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA033</p>
+    <p><b>Nama:</b> ENENG NURHASANAH</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td>1</td>
+<td>-10</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-18</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>30</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -13</p>
+<p>TOTAL %: -0.13</p>
+<p>BONUS ACTUAL: 870000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA034</p>
+    <p><b>Nama:</b> KARTONO</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td>1</td>
+<td>-2</td>
+<td>-2</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-13</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>35</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -3</p>
+<p>TOTAL %: -0.03</p>
+<p>BONUS ACTUAL: 970000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA035</p>
+    <p><b>Nama:</b> INTI ANDANA</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td>1</td>
+<td>-20</td>
+<td>-20</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-25</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -36</p>
+<p>TOTAL %: -0.36</p>
+<p>BONUS ACTUAL: 640000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA036</p>
+    <p><b>Nama:</b> SRI RAHIMA</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td>1</td>
+<td>20</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>20</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: 4</p>
+<p>TOTAL %: 0.04</p>
+<p>BONUS ACTUAL: 1040000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA037</p>
+    <p><b>Nama:</b> JAHLELAWATI</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td>1</td>
+<td>10</td>
+<td>10</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>10</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -6</p>
+<p>TOTAL %: -0.06</p>
+<p>BONUS ACTUAL: 940000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA038</p>
+    <p><b>Nama:</b> HASNIATI</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td></td>
+<td>-10</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-11</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -16</p>
+<p>TOTAL %: -0.16</p>
+<p>BONUS ACTUAL: 840000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA039</p>
+    <p><b>Nama:</b> RAFAEL PAUN</p>
+    <p><b>Jabatan:</b> Staff</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td>1</td>
+<td>-10</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-21</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -26</p>
+<p>TOTAL %: -0.26</p>
+<p>BONUS ACTUAL: 740000</p>
+</div>
+
+</body>
+</html><div style="page-break-after: always;"></div><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<base href="http://localhost:3000/">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: Arial;
+    font-size: 10.5px;
+    margin: 15px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 1px 0;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #eee;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+    line-height: 1.2;
+}
+
+/* Lebar kolom */
+th:nth-child(1), td:nth-child(1) {
+    width: 55%;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Angka rata tengah */
+.text-right {
+    text-align: center;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.summary {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 2px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">Penilaian Point Bonus Untuk Staff</div>
+
+<div class="info">
+    <p><b>ID:</b> AA040</p>
+    <p><b>Nama:</b> NURIDA ARIE YANI</p>
+    <p><b>Jabatan:</b> Manager</p>
+    <p><b>Periode:</b> 2026-02-28</p>
+    <p><b>Nilai Bonus:</b> 1000000</p>
+</div>
+
+<div class="section-title">STANDAR</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Cuti/Sakit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 30 Menit</td>
+<td></td>
+<td>-2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Telat < 30 Menit</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Telat > 60 Menit</td>
+<td>1</td>
+<td>-10</td>
+<td>-10</td>
+</tr>
+
+<tr>
+<td>Lupa Absen</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-21</td>
+</tr>
+</table>
+
+<div class="section-title">REWARD</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Kehadiran Full</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Masuk Ontime</td>
+<td></td>
+<td>20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Overtime</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Kerja Hari Libur</td>
+<td></td>
+<td>5</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Reward</td>
+<td></td>
+<td>10</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+</table>
+
+<div class="section-title">PUNISHMENT</div>
+<table>
+<tr>
+<th>Prestasi</th>
+<th>Pengulangan</th>
+<th>Poin</th>
+<th>Nilai</th>
+</tr>
+
+<tr>
+<td>Lalai</td>
+<td></td>
+<td>-20</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Tunda pekerjaan</td>
+<td>1</td>
+<td>-5</td>
+<td>-5</td>
+</tr>
+
+<tr>
+<td>Alpha</td>
+<td></td>
+<td>-5</td>
+<td>0</td>
+</tr>
+
+<tr class="total-row">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+</table>
+
+<div class="summary">
+<p>TOTAL NILAI: -26</p>
+<p>TOTAL %: -0.26</p>
+<p>BONUS ACTUAL: 740000</p>
+</div>
+
+</body>
+</html>

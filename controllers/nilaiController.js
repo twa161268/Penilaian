@@ -9,7 +9,7 @@ exports.loadDataByPeriode = async (req, res) => {
     const periode = req.params.periode;
     const [tahun, bulan] = periode.split("-");
     const sql = `
-    SELECT period, idk, nama, totalpersen, bnsactual
+    SELECT TO_CHAR(period, 'YYYY-MM-DD') as period, idk, nama, totalpersen, bnsactual
     FROM tabel_nilai
     WHERE period >= $1 AND period < $2
     `;
@@ -19,9 +19,16 @@ exports.loadDataByPeriode = async (req, res) => {
     const end = new Date(start);
     end.setMonth(end.getMonth() + 1);
 
-    const startDate = start.toISOString().slice(0, 10);
-    const endDate = end.toISOString().slice(0, 10);
+    // format manual YYYY-MM-DD (tanpa UTC)
+    const formatDate = (d) => {
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+    };
 
+    const startDate = formatDate(start);
+    const endDate = formatDate(end);
     
     try {
         //const rows = await db.query(sql);
@@ -48,9 +55,19 @@ exports.loadDataByPeriodeidk = async (req, res) => {
     const end = new Date(start);
     end.setMonth(end.getMonth() + 1);
 
-    const startDate = start.toISOString().slice(0, 10);
-    const endDate = end.toISOString().slice(0, 10);
-    
+    // format manual YYYY-MM-DD (tanpa UTC)
+    const formatDate = (d) => {
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+    };
+
+    const startDate = formatDate(start);
+    const endDate = formatDate(end);
+
+
+
     try {
         const rows = await db.query(sql, [startDate, endDate, idk]);
 
@@ -101,8 +118,8 @@ const updateByKeys = async (table, data, where, db) => {
   const finalValues = [...values, ...whereValues];
 
   // debug (optional)
-  //console.log(sql);
-  //console.log(finalValues.length, "params");
+  console.log(sql);
+  console.log(finalValues.length, "params");
 
   return db.query(sql, finalValues);
 };
@@ -148,7 +165,6 @@ exports.simpanNilai = async (req, res) => {
 exports.deleteNilai = async (req, res) => {
     try {
         const items = req.body.items;
- 
         if (!items || items.length === 0) {
             return res.json({ success: false, msg: "Tidak ada data!" });
         }
@@ -157,10 +173,21 @@ exports.deleteNilai = async (req, res) => {
         let failCount = 0;
 
         for (let row of items) {
-
+          //console.log("Processing delete for:", row); // Debug: pastikan data yang diterima benar 
+        
+        //const d = new Date(row.period);
+        //const zperiode = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+        
           const zdate = row.period;
           const [zyear, zmonth]= zdate.split("-");
           const zperiode = `${zyear}-${String(zmonth).padStart(2, '0')}-01`;
+        
+          //const d = new Date(row.period);
+          //const start = new Date(`${tahun}-${bulan}-01`);
+          //const zperiode = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-01`;
+
+
+          console.log("Formatted period for deletion:", zperiode,row.idk,row.period); // Debug: pastikan format periode benar
 
             // di zperiode tidak dikasih tanda kutip
             const sql = `

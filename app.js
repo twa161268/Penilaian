@@ -1,6 +1,5 @@
 const express = require("express");
 
-
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -10,14 +9,8 @@ const nilaiidkRoutes = require("./routes/nilaiidkRoutes");
 const karyawanRoutes = require("./routes/karyawanRoutes");
 const refnilaiRoutes = require("./routes/refnilaiRoutes");
 const simpanRoutes = require("./routes/simpanRoutes");
-
+const reportRoutes = require("./routes/reportRoutes");
 const app = express();
-
-
-
-
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -29,8 +22,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// ROUTE HALAMAN DASHBOARD (penilaian.ejs)
+app.use("/report", reportRoutes);
+
 app.get("/", (req, res) => {
+    res.render("index");
+});
+
+// ROUTE HALAMAN DASHBOARD (penilaian.ejs)
+app.get("/penilaian", (req, res) => {
     res.render("penilaian");
 });
 
@@ -40,18 +39,10 @@ app.use("/karyawan", karyawanRoutes);
 app.use("/refnilai", refnilaiRoutes);
 app.use("/nilaiidk", nilaiidkRoutes);
 app.use("/simpan", simpanRoutes);
-
+app.use("/report", reportRoutes);
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () =>
     console.log(`Server berjalan di http://localhost:${PORT}`)
 );
-
-
-//const PORT = 3000;
-//app.listen(PORT, () =>
-//    console.log(`Server berjalan di http://localhost:${PORT}`)
-//);
-
-
