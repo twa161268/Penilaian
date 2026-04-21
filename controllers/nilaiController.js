@@ -118,8 +118,8 @@ const updateByKeys = async (table, data, where, db) => {
   const finalValues = [...values, ...whereValues];
 
   // debug (optional)
-  console.log(sql);
-  console.log(finalValues.length, "params");
+  //console.log(sql);
+  //console.log(finalValues.length, "params");
 
   return db.query(sql, finalValues);
 };

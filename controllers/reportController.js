@@ -37,7 +37,7 @@ exports.generatePdf = async (req, res) => {
             });
         });
 
-        //const fs = require("fs");
+        const fs = require("fs");
         //fs.writeFileSync("test.html", html);
 
         await page.setContent(html, {
@@ -138,7 +138,7 @@ exports.generatePdf2 = async (req, res) => {
         }
 
 
-        //const fs = require("fs");
+        const fs = require("fs");
         //fs.writeFileSync("test.html", allHtml);
 
         await page.setContent(allHtml, {
