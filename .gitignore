@@ -1,3 +1,7 @@
 node_modules
 DOCUMENT
 .env
+index.html
+test.html
+debug.pdf
+dbnilai.mdb

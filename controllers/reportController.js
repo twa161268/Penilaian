@@ -20,9 +20,8 @@ exports.generatePdf = async (req, res) => {
         }
 
         const data = result[0];
-        console.log(periode,idk, zperiode,data);
+        //console.log(periode,idk, zperiode,data);
 
-        //const browser = await puppeteer.launch();
 
         const browser = await puppeteer.launch({
             headless: true,
@@ -38,10 +37,8 @@ exports.generatePdf = async (req, res) => {
             });
         });
 
-        const fs = require("fs");
-
-
-        fs.writeFileSync("test.html", html);
+        //const fs = require("fs");
+        //fs.writeFileSync("test.html", html);
 
         await page.setContent(html, {
             waitUntil: "domcontentloaded"
@@ -49,7 +46,6 @@ exports.generatePdf = async (req, res) => {
         await new Promise(r => setTimeout(r, 500));
 
 
-        //const fs = require("fs");
 
         const bootstrapCSS = fs.readFileSync(
             "./public/css/bootstrap.min.css",
@@ -73,7 +69,7 @@ exports.generatePdf = async (req, res) => {
 
 
         //const fs = require("fs");
-        fs.writeFileSync("debug.pdf", pdf);
+        //fs.writeFileSync("debug.pdf", pdf);
 
         await browser.close();
 
@@ -112,7 +108,7 @@ exports.generatePdf2 = async (req, res) => {
         }
 
         const data = result[0];
-        console.log(periode,zperiode);
+        //console.log(periode,zperiode);
 
         //const browser = await puppeteer.launch();
 
@@ -142,16 +138,13 @@ exports.generatePdf2 = async (req, res) => {
         }
 
 
-        const fs = require("fs");
-        fs.writeFileSync("test.html", allHtml);
+        //const fs = require("fs");
+        //fs.writeFileSync("test.html", allHtml);
 
         await page.setContent(allHtml, {
             waitUntil: "domcontentloaded"
         });
         await new Promise(r => setTimeout(r, 500));
-
-
-        //const fs = require("fs");
 
         const bootstrapCSS = fs.readFileSync(
             "./public/css/bootstrap.min.css",
@@ -175,7 +168,7 @@ exports.generatePdf2 = async (req, res) => {
 
 
         //const fs = require("fs");
-        fs.writeFileSync("debug.pdf", pdf);
+        //fs.writeFileSync("debug.pdf", pdf);
         await browser.close();
 
 
