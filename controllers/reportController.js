@@ -1,7 +1,4 @@
 //controllers/reportController.js
-//const puppeteer = require("puppeteer");
-const puppeteer = require("puppeteer-core");
-const chromium = require("@sparticuz/chromium");
 
 const db = require("../db"); // sesuaikan dengan koneksi kamu
 
@@ -24,17 +21,46 @@ exports.generatePdf = async (req, res) => {
 
         const data = result[0];
 
-        //const browser = await puppeteer.launch({
+        
+        //buka kalau untuk lokal
+        //const browser = await puppeteerl.launch({
         //    headless: true,
         //    args: ['--no-sandbox', '--disable-setuid-sandbox']
         //});
 
-        const browser = await puppeteer.launch({
-            args: chromium.args,
-            defaultViewport: chromium.defaultViewport,
-            executablePath: await chromium.executablePath(),
-            headless: chromium.headless,
-        });        
+        //buka kalau untuk vercell
+        //const browser = await puppeteer.launch({
+        //    args: chromium.args,
+        //    defaultViewport: chromium.defaultViewport,
+        //    executablePath: await chromium.executablePath(),
+        //    headless: chromium.headless,
+        //});        
+
+
+        let browser;
+
+        if (process.env.NODE_ENV === "production") {
+            // VERCEL
+            const puppeteer = require("puppeteer-core");
+            const chromium = require("@sparticuz/chromium");
+            browser = await puppeteer.launch({
+                args: chromium.args,
+                defaultViewport: chromium.defaultViewport,
+                executablePath: await chromium.executablePath(),
+                headless: chromium.headless,
+            });
+
+        } else {
+            // LOCAL
+            const puppeteer = require("puppeteer");
+
+            browser = await puppeteer.launch({
+                headless: true,
+                args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+        }
+
+
 
         const page = await browser.newPage();
 
@@ -114,19 +140,43 @@ exports.generatePdf2 = async (req, res) => {
             return res.status(404).send("Data tidak ditemukan");
         }
 
-        const data = result[0];
-
+        
+        
+        // buka kalau untuk lokal
         //const browser = await puppeteer.launch({
         //    headless: true,
         //    args: ['--no-sandbox', '--disable-setuid-sandbox']
         //});
 
-        const browser = await puppeteer.launch({
-            args: chromium.args,
-            defaultViewport: chromium.defaultViewport,
-            executablePath: await chromium.executablePath(),
-            headless: chromium.headless,
-        });
+        //buka kalu untuk vercell
+        //const browser = await puppeteer.launch({
+        //   args: chromium.args,
+        //    defaultViewport: chromium.defaultViewport,
+        //    executablePath: await chromium.executablePath(),
+        //    headless: chromium.headless,
+        //});
+
+
+        let browser;
+
+        if (process.env.NODE_ENV === "production") {
+            // VERCEL
+            const puppeteer = require("puppeteer-core");
+            const chromium = require("@sparticuz/chromium");
+            browser = await puppeteer.launch({
+                args: chromium.args,
+                defaultViewport: chromium.defaultViewport,
+                executablePath: await chromium.executablePath(),
+                headless: chromium.headless,
+            });
+
+        } else {
+            // LOCAL
+            const puppeteer = require("puppeteer");
+            browser = await puppeteer.launch({
+                headless: true
+            });
+        }
 
         const page = await browser.newPage();
 
@@ -157,7 +207,7 @@ exports.generatePdf2 = async (req, res) => {
         //});
         //await new Promise(r => setTimeout(r, 500));
 
-        await page.setContent(html, {
+        await page.setContent(allHtml, {
             waitUntil: "networkidle0"
         });
 
@@ -196,6 +246,6 @@ exports.generatePdf2 = async (req, res) => {
 
     } catch (err) {
         console.error(err);
-        res.status(500).send("Error toto");
+        res.status(500).send("Error generate report");
     }
 };
