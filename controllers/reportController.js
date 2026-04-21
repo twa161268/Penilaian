@@ -1,5 +1,8 @@
 //controllers/reportController.js
-const puppeteer = require("puppeteer");
+//const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
+const chromium = require("@sparticuz/chromium");
+
 const db = require("../db"); // sesuaikan dengan koneksi kamu
 
 exports.generatePdf = async (req, res) => {
@@ -20,13 +23,18 @@ exports.generatePdf = async (req, res) => {
         }
 
         const data = result[0];
-        //console.log(periode,idk, zperiode,data);
 
+        //const browser = await puppeteer.launch({
+        //    headless: true,
+        //    args: ['--no-sandbox', '--disable-setuid-sandbox']
+        //});
 
         const browser = await puppeteer.launch({
-            headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
-        });
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath(),
+            headless: chromium.headless,
+        });        
 
         const page = await browser.newPage();
 
@@ -40,25 +48,27 @@ exports.generatePdf = async (req, res) => {
         const fs = require("fs");
         //fs.writeFileSync("test.html", html);
 
+        //await page.setContent(html, {
+        //    waitUntil: "domcontentloaded"
+        //});
+        //await new Promise(r => setTimeout(r, 500));
+
         await page.setContent(html, {
-            waitUntil: "domcontentloaded"
+            waitUntil: "networkidle0"
         });
-        await new Promise(r => setTimeout(r, 500));
 
-
-
-        const bootstrapCSS = fs.readFileSync(
-            "./public/css/bootstrap.min.css",
-            "utf8"
-        );
-
-        await page.addStyleTag({
-            content: bootstrapCSS
-        });
+        //const bootstrapCSS = fs.readFileSync(
+        //    "./public/css/bootstrap.min.css",
+        //    "utf8"
+        //);
+        //await page.addStyleTag({
+        //    content: bootstrapCSS
+        //});
 
         const pdf = await page.pdf({
             format: "A4",
             printBackground: true,
+            preferCSSPageSize: true,
             margin: {
                 top: "20px",
                 right: "20px",
@@ -68,12 +78,9 @@ exports.generatePdf = async (req, res) => {
         });
 
 
-        //const fs = require("fs");
         //fs.writeFileSync("debug.pdf", pdf);
 
         await browser.close();
-
-
             res.set({
                 "Content-Type": "application/pdf",
                 "Content-Disposition": "inline; filename=report.pdf",
@@ -108,13 +115,17 @@ exports.generatePdf2 = async (req, res) => {
         }
 
         const data = result[0];
-        //console.log(periode,zperiode);
 
-        //const browser = await puppeteer.launch();
+        //const browser = await puppeteer.launch({
+        //    headless: true,
+        //    args: ['--no-sandbox', '--disable-setuid-sandbox']
+        //});
 
         const browser = await puppeteer.launch({
-            headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath(),
+            headless: chromium.headless,
         });
 
         const page = await browser.newPage();
@@ -141,23 +152,27 @@ exports.generatePdf2 = async (req, res) => {
         const fs = require("fs");
         //fs.writeFileSync("test.html", allHtml);
 
-        await page.setContent(allHtml, {
-            waitUntil: "domcontentloaded"
-        });
-        await new Promise(r => setTimeout(r, 500));
+        //await page.setContent(allHtml, {
+        //   waitUntil: "domcontentloaded"
+        //});
+        //await new Promise(r => setTimeout(r, 500));
 
-        const bootstrapCSS = fs.readFileSync(
-            "./public/css/bootstrap.min.css",
-            "utf8"
-        );
-
-        await page.addStyleTag({
-            content: bootstrapCSS
+        await page.setContent(html, {
+            waitUntil: "networkidle0"
         });
+
+        //const bootstrapCSS = fs.readFileSync(
+        //    "./public/css/bootstrap.min.css",
+        //    "utf8"
+        //);
+        //await page.addStyleTag({
+        //    content: bootstrapCSS
+        //});
 
         const pdf = await page.pdf({
             format: "A4",
             printBackground: true,
+            preferCSSPageSize: true,
             margin: {
                 top: "20px",
                 right: "20px",
@@ -167,11 +182,9 @@ exports.generatePdf2 = async (req, res) => {
         });
 
 
-        //const fs = require("fs");
         //fs.writeFileSync("debug.pdf", pdf);
+
         await browser.close();
-
-
             res.set({
                 "Content-Type": "application/pdf",
                 "Content-Disposition": "inline; filename=report.pdf",
