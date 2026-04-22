@@ -1,8 +1,8 @@
 const express = require("express");
-
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
+const { isAuth } = require("./middleware/auth");
 
 const nilaiRoutes = require("./routes/nilaiRoutes");
 const nilaiidkRoutes = require("./routes/nilaiidkRoutes");
@@ -10,6 +10,8 @@ const karyawanRoutes = require("./routes/karyawanRoutes");
 const refnilaiRoutes = require("./routes/refnilaiRoutes");
 const simpanRoutes = require("./routes/simpanRoutes");
 const reportRoutes = require("./routes/reportRoutes");
+const authRoutes = require("./routes/authRoutes");
+const mloginRoutes = require("./routes/mloginRoutes");
 const app = express();
 
 app.use(express.json());
@@ -18,11 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
-
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.use("/report", reportRoutes);
 
 app.get("/", (req, res) => {
     res.render("index");
@@ -33,6 +33,15 @@ app.get("/penilaian", (req, res) => {
     res.render("penilaian");
 });
 
+//app.get("/penilaian", isAuth, (req, res) => {
+//    res.render("penilaian");
+//});
+
+//app.get("/mlogin", (req, res) => {
+//    res.render("mlogin");
+//});
+
+
 // API ROUTES
 app.use("/nilai", nilaiRoutes);
 app.use("/karyawan", karyawanRoutes);
@@ -40,9 +49,23 @@ app.use("/refnilai", refnilaiRoutes);
 app.use("/nilaiidk", nilaiidkRoutes);
 app.use("/simpan", simpanRoutes);
 app.use("/report", reportRoutes);
+app.use("/", authRoutes);
+app.use("/mlogin", mloginRoutes);
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () =>
     console.log(`Server berjalan di http://localhost:${PORT}`)
 );
+
+const session = require("express-session");
+
+app.use(session({
+    secret: "secret123",
+    resave: false,
+    saveUninitialized: true
+}));
+
+
+
+

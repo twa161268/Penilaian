@@ -5,19 +5,23 @@ let selectedIDK = null;
 
 
 // tombol tampilkan form
-document.getElementById("btnShowForm").addEventListener("click", () => {
+document.getElementById("btnShowForml").addEventListener("click", () => {
     mode = "insert";
     selectedIDK = null;
     
-    const form = document.getElementById("mainForm");    
+    const form = document.getElementById("mainForml");    
     form.style.display = "block";
 
     // kosongkan input
-    document.getElementById("idk").value = "";
-    document.getElementById("nama").value = "";
-    document.getElementById("jabatan").value = "";
+    document.getElementById("userid").value = "";
+    document.getElementById("usernm").value = "";
+    document.getElementById("userpassword").value = "";
+    document.getElementById("usernama").value = "";
+    document.getElementById("userrole").value = "";
+    document.getElementById("useractive").checked = true;
 
-    document.getElementById("idk").readOnly = false;
+
+    //document.getElementById("idk").readOnly = false;
 });
 
 
@@ -29,14 +33,16 @@ async function masukin() {
     // FIELD UTAMA
     // =====================
     
-    send.idk = document.getElementById("idk").value; 
-    send.nama = document.getElementById("nama").value;
-    send.jabatan = document.getElementById("jabatan").value;
+    send.username = document.getElementById("usernm").value; 
+    send.userpassword = document.getElementById("userpassword").value;
+    send.usernama = document.getElementById("usernama").value;
+    send.userrole = document.getElementById("userrole").value;
+    send.useractive = document.getElementById("useractive").checked;
     
     // =====================
     // KIRIM KE SERVER
     // =====================
-    const res = await fetch("/karyawan/create", {
+    const res = await fetch("/mlogin/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(send)
@@ -54,31 +60,35 @@ async function masukin() {
 
 //UPDATE  DATA
 
-document.getElementById("btnSimpan").addEventListener("click", async () => {
+document.getElementById("btnSimpanl").addEventListener("click", async () => {
     await simpan();
 });
 
-document.getElementById("btnBatal").addEventListener("click", async () => {
-    document.getElementById("mainForm").style.display = "none";
+document.getElementById("btnBatall").addEventListener("click", async () => {
+    document.getElementById("mainForml").style.display = "none";
     await loadDatak();
 });
 
 
-
 async function simpan() {
     const send = {
-        idk: document.getElementById("idk").value,
-        nama: document.getElementById("nama").value,
-        jabatan: document.getElementById("jabatan").value
+        userid:document.getElementById("userid").value,
+        usernm:document.getElementById("usernm").value,
+        userpassword:document.getElementById("userpassword").value,
+        usernama:document.getElementById("usernama").value,
+        userrole : document.getElementById("userrole").value,
+        useractive :document.getElementById("useractive").checked
     };
 
     let url = "";
 
     if (mode === "insert") {
-        url = "/karyawan/create";   // INSERT
+        url = "/mlogin/create";   // INSERT
     } else {
-        url = "/karyawan/update";   // UPDATE
+        url = "/mlogin/update";   // UPDATE
     }
+
+    //console.log(send);
 
     const res = await fetch(url, {
         method: "POST",
@@ -92,7 +102,7 @@ async function simpan() {
         alert(mode === "insert" ? "Data berhasil ditambah!" : "Data berhasil diupdate!");
 
         // reset form
-        document.getElementById("mainForm").style.display = "none";
+        document.getElementById("mainForml").style.display = "none";
         await loadDatak();
 
     } else {
@@ -103,35 +113,44 @@ async function simpan() {
 // helper
 function getForm() {
     return {
-        idk: document.getElementById("idk").value,
-        nama: document.getElementById("nama").value,
-        jabatan: document.getElementById("jabatan").value
+        userid: document.getElementById("userid").value,
+        usernm: document.getElementById("usernm").value,
+        userpassword: document.getElementById("userpassword").value,
+        usernama: document.getElementById("usernama").value,
+        userrole: document.getElementById("userrole").value,
+        useractive: document.getElementById("useractive").checked
     };
 }
 
 async function loadDatak() {  
     return new Promise(async (resolve) => {
-    const res = await fetch(`/karyawan/load`);
+    const res = await fetch(`/mlogin/load`);
     const data = await res.json();
 
     //console.log("Data yang diterima:",data.loadData); // <-- pastikan struktur data benar
 
-    const tbody = document.querySelector("#tblKaryawan tbody");
+    const tbody = document.querySelector("#tblmlogin tbody");
     tbody.innerHTML = "";
+
+    //<tr onclick="selectRow('${row.id}')">
 
     if (data.success && data.data.length > 0) {
         data.data.forEach(row => {
-            //console.log(`Loading row: ${row.idk}, ${row.period}, Period: ${String(row.period).substring(0, 7)}`);
+            //console.log(`Loading row: ${row.id}, ${row.username}, Period: ${String(row.period).substring(0, 7)}`);
             tbody.innerHTML += `
+            
             <tr>
-            <td onclick="selectRow('${row.idk}')">${row.idk}</td>
-            <td>${row.idk}</td>
+            <td onclick="selectRow('${row.id}')">${row.id}</td>
+            <td>${row.username}</td>
+            <td>${row.password}</td>
             <td>${row.nama}</td>
-            <td>${row.jabatan}</td>
+            <td>${row.role}</td>
+            <td>${row.is_active}</td>
+            <td>${row.created_at}</td>
 
             <td class="text-center">
                 <input type="checkbox" class="chkRow" 
-               data-idk="${row.idk}" 
+               data-idk="${row.id}" 
                style="transform: scale(1.2);">
             </td>
             </tr>
@@ -149,7 +168,7 @@ async function loadDatak() {
 
 
 function rebindCheckboxEvents() {
-    const chkAll = document.getElementById("chkHeaderk");
+    const chkAll = document.getElementById("chkHeaderl");
     const chkRows = document.querySelectorAll(".chkRow");
 
 
@@ -167,6 +186,7 @@ function rebindCheckboxEvents() {
     });
 }
 
+// apabila halaman mlogin dibuka, maka DOM ini juga jalan
 document.addEventListener("DOMContentLoaded", async () => {
     await loadDatak();
 });
@@ -175,16 +195,15 @@ async function selectRow(xIDK) {
     mode = "edit";
     selectedIDK = xIDK;
     
-    const form = document.getElementById("mainForm");    
+    const form = document.getElementById("mainForml");    
     form.style.display = "block";
 
     //const periode = document.getElementById("idk").value;
-    //console.log("Selected IDK:", xIDK); // Debug: pastikan IDK
-    document.getElementById("idk").readOnly = true;
+    //document.getElementById("idk").readOnly = true;
 
     try {
         document.body.style.cursor = "wait";
-        const res = await fetch(`/karyawan/load/${xIDK}`);
+        const res = await fetch(`/mlogin/load/${xIDK}`);
 
         if (!res.ok) throw new Error("Fetch gagal");
 
@@ -204,10 +223,14 @@ async function selectRow(xIDK) {
             return;
         }
 
-        document.getElementById("idk").value = row.idk;
-        document.getElementById("nama").value = row.nama;
-        document.getElementById("jabatan").value = row.jabatan;
-        
+        document.getElementById("userid").value = row.id;
+        document.getElementById("usernm").value = row.username;
+        document.getElementById("userpassword").value = row.password;
+        document.getElementById("usernama").value = row.nama;
+        document.getElementById("userrole").value = row.role;
+        //document.getElementById("useractive").checked = row.is_active;
+        document.getElementById("useractive").checked = 
+        row.is_active === true || row.is_active === "true";
 
     } catch (err) {
         console.error(err);
@@ -217,9 +240,9 @@ async function selectRow(xIDK) {
     }
 }
 
-document.getElementById("btnCarik").addEventListener("click", function () {
+document.getElementById("btnCaril").addEventListener("click", function () {
     let keyword = document.getElementById("carik").value.toLowerCase();
-    let table = document.getElementById("tblKaryawan");
+    let table = document.getElementById("tblmlogin");
     let rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
 
     for (let i = 0; i < rows.length; i++) {
@@ -236,7 +259,7 @@ document.getElementById("btnCarik").addEventListener("click", function () {
 });
 
 //DELETE DATA
-document.getElementById("btnDeletek").addEventListener("click", async () => {
+document.getElementById("btnDeletel").addEventListener("click", async () => {
     const selected = document.querySelectorAll(".chkRow:checked");
     if (selected.length === 0) {
         alert("Tidak ada data yang dipilih!");
@@ -248,13 +271,13 @@ document.getElementById("btnDeletek").addEventListener("click", async () => {
     const list = [];
     selected.forEach(c => {
         list.push({
-            idk: c.dataset.idk
+            id: c.dataset.idk
         });
     });
     //console.log("Data yang akan dihapus:", list);
 
 
-    const res = await fetch("/karyawan/delete", {
+    const res = await fetch("/mlogin/delete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items: list })
@@ -265,9 +288,11 @@ document.getElementById("btnDeletek").addEventListener("click", async () => {
 
     if (json.success) {
         alert("Data berhasil dihapus!");
-        document.getElementById("mainForm").style.display = "none";
-        await loadDatak();    } 
-    else {
+        // reset form
+        document.getElementById("mainForml").style.display = "none";
+        await loadDatak();
+
+    } else {
         alert("Gagal menghapus data.");
     }
 });
