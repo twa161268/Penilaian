@@ -5,9 +5,16 @@ let selectedIDK = ""; // IDK dari row yang diklik
 
 
 // ========== 1. LOAD REFERENSI NILAI ==========
+
 async function loadReferensi() {
-    const res = await fetch("/refnilai");
-    refData = await res.json();
+    const res = await fetch("/reffnilai/load");
+    const result = await res.json();
+
+    if (result.success) {
+        refData = result.data; // 🔥 ini kunci
+    } else {
+        refData = {};
+    }
 }
 
 async function loadData() {  
@@ -125,17 +132,17 @@ document.getElementById("btnDelete").addEventListener("click", async () => {
 async function selectRow(IDK, PERIOD) {
     mode = "edit";
     selectedIDK = IDK;
-
+    
     const periode = document.getElementById("periode").value;
 
 
     try {
         document.body.style.cursor = "wait";
-
+        
         if (!refData || Object.keys(refData).length === 0) {
             await loadReferensi();
         }
-
+        
         const res = await fetch(`/nilaiidk/load/${periode}/${IDK}`);
 
         if (!res.ok) throw new Error("Fetch gagal");

@@ -17,8 +17,19 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/css/styles.css" rel="stylesheet" />
+
+        <style>
+        .nav-btn.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        </style>
+
+
+
     </head>
-    <body id="page-top">
+    <!--<body id="page-top">-->
+    <body id="page-top" data-login="<%= isLogin %>">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -29,7 +40,20 @@
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login" id="btnmasuk">Login</a></li>
+                        <!--<li class="nav-item"><a class="nav-link" href="/login" id="btnmasuk">Login</a></li>-->
+
+                        <li class="nav-item">
+                            <% if (user) { %>
+                                <a class="nav-link" href="/logout">
+                                    <i class="bi bi-person-circle"></i> <%= user %> | Logout
+                                </a>
+                            <% } else { %>
+                                <a class="nav-link" href="/login">
+                                    Login
+                                </a>
+                            <% } %>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -44,24 +68,21 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">Start untuk melakukan proses penilaian karyawan</p>
-                        <div class="d-flex gap-2">
-                        <button id="btnForm" type="button" class="btn btn-primary flex-fill"
-                                onclick="window.location.href='/penilaian'">
-                        Form Penilaian
+                        <button class="btn btn-primary flex-fill nav-btn" data-url="/penilaian">
+                            Form Penilaian
                         </button>
 
-                        <button id="btnIsik" type="button" class="btn btn-secondary flex-fill"
-                                onclick="window.location.href='/karyawan'">
-                        Form Karyawan
+                        <button class="btn btn-secondary flex-fill nav-btn" data-url="/karyawan">
+                            Form Karyawan
                         </button>
 
-                        <button id="btnIsil" type="button" class="btn btn-secondary flex-fill"
-                                onclick="window.location.href='/mlogin'">
-                        Form Manajemen user
+                        <button class="btn btn-secondary flex-fill nav-btn" data-url="/mlogin">
+                            Form Manajemen user
                         </button>
 
-
-                        <button id="btnIsiP" type="button" class="btn btn-secondary flex-fill">Isi Data Parameter</button>
+                        <button class="btn btn-secondary flex-fill nav-btn" data-url="/reffnilai">
+                            Isi Data Parameter
+                        </button>
                         </div>
                     </div>
                 </div>
@@ -132,6 +153,33 @@
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!--<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>-->
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const isLogin = document.body.dataset.login === "true";
+            const buttons = document.querySelectorAll(".nav-btn"); //karena tombol2 utama dikasih tag nav-btn
+
+            buttons.forEach(btn => {
+
+                // disable tampilan kalau belum login
+                if (!isLogin) {
+                    btn.classList.add("disabled");
+                }
+
+                btn.addEventListener("click", function () {
+                    if (!isLogin) {
+                        alert("Harus login terlebih dahulu!");
+                        return;
+                    }
+
+                    window.location.href = this.dataset.url;
+                });
+            });
+
+        });
+        </script>
+
     </body>
 </html>

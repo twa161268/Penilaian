@@ -72,7 +72,7 @@ exports.create = async (req, res) => {
 
     try{
     const { usernm, userpassword, usernama,userrole,useractive } = req.body;
-    console.log(usernm, userpassword, usernama,userrole,useractive);
+    //console.log(usernm, userpassword, usernama,userrole,useractive);
     const cek = await db.query(
         "SELECT 1 FROM users WHERE username = $1",
         [usernm]
@@ -87,7 +87,7 @@ exports.create = async (req, res) => {
     }
 
     const userpass = await bcrypt.hash(userpassword, 10);
-    console.log(usernm, userpass, usernama,userrole,useractive);
+    //console.log(usernm, userpass, usernama,userrole,useractive);
     await db.query(
         "INSERT INTO users (username, password, nama, role,is_active, created_at) VALUES ($1,$2,$3,$4,$5,now())",
         [usernm, userpass, usernama,userrole,useractive]
@@ -164,7 +164,7 @@ const updateByKeys = async (table, data, where, db) => {
     WHERE ${whereClause}
   `;
 
-  console.log(sql);
+  //console.log(sql);
   // values untuk SET
   const values = fields.map(f => data[f] ?? null);
 
@@ -195,7 +195,7 @@ exports.remove= async (req, res) => {
 
         for (let row of items) {
 
-          console.log("Formatted idk for deletion:", row.id); // Debug: pastikan format periode benar
+          //console.log("Formatted idk for deletion:", row.id); // Debug: pastikan format periode benar
 
             // di zperiode tidak dikasih tanda kutip
             const sql = `
@@ -207,7 +207,7 @@ exports.remove= async (req, res) => {
                 await db.query(sql, [row.id]);
                 successCount++;
             } catch (err) {
-                console.log("Delete error:", err);
+                //console.log("Delete error:", err);
                 failCount++;
             }
 

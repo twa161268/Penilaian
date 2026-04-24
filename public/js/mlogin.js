@@ -26,7 +26,7 @@ document.getElementById("btnShowForml").addEventListener("click", () => {
 
 
 async function masukin() {
-    console.log("MULAI INPUT DATA");
+    //console.log("MULAI INPUT DATA");
     const send = {};
 
     // =====================
